@@ -1,3 +1,4 @@
+'use client';
 import Loading from '../loading';
 import { useRouter } from 'next/router';
 

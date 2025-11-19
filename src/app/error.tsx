@@ -1,4 +1,4 @@
-'use client'; // 👈 Dòng này phải nằm trên cùng, không có gì ở trên nó
+'use client';
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
