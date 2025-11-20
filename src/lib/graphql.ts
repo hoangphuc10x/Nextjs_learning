@@ -33,7 +33,7 @@ gqlClient.interceptors.response.use(
                 }
               `,
           },
-          { withCredentials: true }, // ← cookie tự động gửi
+          { withCredentials: true },
         );
 
         return gqlClient(originalRequest);
