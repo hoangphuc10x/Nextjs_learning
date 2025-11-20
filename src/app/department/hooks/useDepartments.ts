@@ -40,13 +40,19 @@ const DELETE_DEPARTMENT = `
   }
 `;
 
+type DepartmentsResponse = {
+  departments: Department[];
+};
+
 export const useDepartments = () => {
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
   const { data: departments = [], isLoading } = useQuery<Department[]>({
     queryKey: ['departments'],
-    queryFn: () => gql(DEPARTMENTS_QUERY).then(d => d.departments),
+    // queryFn: () => gql(DEPARTMENTS_QUERY).then(d => d.departments),
+    queryFn: () =>
+      gql<DepartmentsResponse>(DEPARTMENTS_QUERY).then(res => res.departments),
   });
 
   const createMut = useMutation({
